@@ -1,0 +1,95 @@
+﻿<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../baasic-ajax/baasic-ajax.html">
+<polymer-element name="baasic-crud" attributes="getUrl postUrl putUrl deleteUrl">
+    <template>
+        
+        <baasic-ajax id="axGet" 
+                 url="{{getUrl}}"
+                 handleAs="json"
+                 contentType="application/json"
+                 method="GET"
+                 on-core-response="{{onGetCompleted}}"
+                 on-core-error="{{onGetError}}"></baasic-ajax>
+        <baasic-ajax id="axPost"
+                 url="{{postUrl}}"
+                 handleAs="json"
+                 contentType="application/json"
+                 method="POST"
+                 on-core-response="{{onPostCompleted}}"
+                 on-core-error="{{onPostError}}"></baasic-ajax>
+        <baasic-ajax id="axPut"
+                 url="{{putUrl}}"
+                 handleAs="json"
+                 contentType="application/json"
+                 method="PUT"
+                 on-core-response="{{onPutCompleted}}"
+                 on-core-error="{{onPutError}}"></baasic-ajax>
+        <baasic-ajax id="axDelete"
+                 url="{{deleteUrl}}"
+                 handleAs="json"
+                 contentType="application/json"
+                 method="DELETE"
+                 on-core-response="{{onDeleteCompleted}}"
+                 on-core-error="{{onDeleteError}}"></baasic-ajax>
+
+    </template>
+    <script>
+        Polymer('baasic-crud', {
+            get: function (params) {
+                var ax = this.$.axGet;
+                ax.params = params;
+                ax.go();
+            },
+            onGetCompleted: function (e) {
+                this.fire('get-completed', { response: e.detail.response });
+            },
+            onGetError: function (e) {
+                this.fire('get-error', { response: e.detail.response });
+            },
+            post: function (params, body) {
+                var ax = this.$.axPost;
+                ax.params = params;
+                ax.body = body;
+                ax.go();
+            },
+            onPostCompleted: function (e) {
+                this.fire('post-completed', { response: e.detail.response });
+            },
+            onPostError: function (e) {
+                this.fire('post-error', { response: e.detail.response });
+            },
+            put: function (params, body) {
+                var ax = this.$.axPut;
+                ax.params = params;
+                ax.body = body;
+                ax.go();
+            },
+            onPutCompleted: function (e) {
+                this.fire('put-completed', { response: e.detail.response });
+            },
+            onPutError: function (e) {
+                this.fire('put-error', { response: e.detail.response });
+            },
+            delete: function (params) {
+                var ax = this.$.axDelete;
+                ax.params = params;
+                ax.go();
+            },
+            onDeleteCompleted: function (e) {
+                this.fire('delete-completed', { response: e.detail.response });
+            },
+            onDeleteError: function (e) {
+                this.fire('delete-error', { response: e.detail.response });
+            }
+            
+        });
+    </script>
+</polymer-element>
+
+
+<script>
+    //to handle the events fired from the web components...
+    //document.querySelector('baasic-articleeditor').addEventListener('onSave', function (e) {
+    //    console.log(e);
+    //});
+</script>
