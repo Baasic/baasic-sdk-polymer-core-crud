@@ -1,6 +1,5 @@
 ﻿{
   "name": "baasic-crud",
-  "version": "0.0.1",
   "dependencies": {
     "polymer": "Polymer/polymer#>=0.3.3",
     "baasic-ajax": "http://gitserver/monosoftware/baasic-ajax.git#>=0.0.1"
