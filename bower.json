@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "baasic-crud",
   "dependencies": {
     "polymer": "Polymer/polymer#>=0.3.3",
