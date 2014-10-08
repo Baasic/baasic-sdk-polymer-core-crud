@@ -1,3 +1,25 @@
+<!--
+Copyright (c) 2014 Mono d.o.o. All rights reserved.
+Code distributed by Mono as a part of the Baasic project
+-->
+
+<!--
+@group Baasic Polymer Elements
+
+The `baasic-crud` element provides CRUD support for other elements. It is used mostly with various REST services. The most-commonly-used HTTP verbs (or methods, as they are properly called) are POST, GET, PUT, and DELETE. These correspond to create, read, update, and delete (or CRUD) operations, respectively.
+
+        <baasic-crud id="crudElement"
+                    geturl="{{baseUrl}}/{{version}}/{{application}}/article/{{slug}}/"
+                    posturl="{{baseUrl}}/{{version}}/{{application}}/article/"
+                    puturl="{{baseUrl}}/{{version}}/{{application}}/article/{{slug}}/"
+                    deleteurl="{{baseUrl}}/{{version}}/{{application}}/article/{{slug}}/"
+                    on-get-completed="{{handleCrudCompleted}}"
+                    on-get-error="{{handleCrudError}}"></baasic-crud>
+
+@element baasic-crud
+@status beta
+@homepage www.baasic.com
+-->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../baasic-ajax/baasic-ajax.html">
 <polymer-element name="baasic-crud" attributes="getUrl postUrl putUrl deleteUrl">
@@ -35,6 +57,78 @@
     </template>
     <script>
         Polymer('baasic-crud', {
+            /**
+             * Fired when GET call is completed.
+             * 
+             * @event get-completed
+             */
+            /**
+             * Fired if an error is encoutered during the GET call.
+             * 
+             * @event get-error
+             */
+            /**
+             * Fired when POST call is completed.
+             * 
+             * @event post-completed
+             */
+            /**
+             * Fired if an error is encoutered during the POST call.
+             * 
+             * @event post-error
+             */
+            /**
+             * Fired when PUT call is completed.
+             * 
+             * @event put-completed
+             */
+            /**
+             * Fired if an error is encoutered during the PUT call.
+             * 
+             * @event put-error
+             */
+            /**
+             * Fired when DELETE call is completed.
+             * 
+             * @event delete-completed
+             */
+            /**
+             * Fired if an error is encoutered during the DELETE call.
+             * 
+             * @event delete-error
+             */
+            /**
+             * URL of the GET method of the service used.
+             * 
+             * @attribute getUrl
+             * @type string
+             * @default ''
+             */
+            getUrl: '',
+            /**
+             * URL of the POST method of the service used.
+             * 
+             * @attribute postUrl
+             * @type string
+             * @default ''
+             */
+            postUrl: '',
+            /**
+             * URL of the PUT method of the service used.
+             * 
+             * @attribute putUrl
+             * @type string
+             * @default ''
+             */
+            putUrl: '',
+            /**
+             * URL of the DELETE method of the service used.
+             * 
+             * @attribute deleteUrl
+             * @type string
+             * @default ''
+             */
+            deleteUrl: '',
             get: function (params) {
                 var ax = this.$.axGet;
                 ax.params = params;
