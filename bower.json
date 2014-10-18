@@ -2,12 +2,9 @@
   "name": "baasic-crud",
   "dependencies": {
     "polymer": "Polymer/polymer#>=0.4.2",
-    "baasic-ajax": "http://gitserver/monosoftware/baasic-sdk-polymer-core-ajax.git#>=0.0.1"
+    "baasic-ajax": "Baasic/baasic-sdk-polymer-core-ajax#>=0.1.0"
   },
-  "authors": [
-    "denis@mono-software.com"
-  ],
-  "description": "Baasic CRUD Ajax (Create-Read-Update-Delete) Web component.",
+  "description": "Baasic CRUD (Create-Read-Update-Delete) Ajax Web component.",
   "keywords": [
     "polymer",
     "web-components",
@@ -16,7 +13,7 @@
     "crud"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/monosoftware/baasic-crud",
+  "homepage": "https://github.com/baasic/baasic-sdk-polymer-core-crud",
   "ignore": [
     "**/.*",
     "node_modules",
