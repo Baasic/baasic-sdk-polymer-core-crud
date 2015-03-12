@@ -9,10 +9,10 @@ Code distributed by Mono as a part of the Baasic project
 The `baasic-crud` element provides CRUD support for other elements. It is used mostly with various REST services. The most-commonly-used HTTP verbs (or methods, as they are properly called) are POST, GET, PUT, and DELETE. These correspond to create, read, update, and delete (or CRUD) operations, respectively.
 
         <baasic-crud id="crudElement"
-                    geturl="{{baseUrl}}/{{version}}/{{application}}/article/{{slug}}/"
-                    posturl="{{baseUrl}}/{{version}}/{{application}}/article/"
-                    puturl="{{baseUrl}}/{{version}}/{{application}}/article/{{slug}}/"
-                    deleteurl="{{baseUrl}}/{{version}}/{{application}}/article/{{slug}}/"
+                    geturl="{{baseUrl}}/{{version}}/{{application}}/articles/{{slug}}/"
+                    posturl="{{baseUrl}}/{{version}}/{{application}}/articles/"
+                    puturl="{{baseUrl}}/{{version}}/{{application}}/articles/{{slug}}/"
+                    deleteurl="{{baseUrl}}/{{version}}/{{application}}/articles/{{slug}}/"
                     on-get-completed="{{handleCrudCompleted}}"
                     on-get-error="{{handleCrudError}}"></baasic-crud>
 
